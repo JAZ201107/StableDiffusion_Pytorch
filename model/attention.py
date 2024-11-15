@@ -78,4 +78,4 @@ class CrossAttention(nn.Module):
             .view(batch_size, sequence_len, d_embed)
         )
 
-        return self.output_proj(out)
+        return self.out_proj(out)

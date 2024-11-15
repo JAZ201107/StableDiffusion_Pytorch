@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from attention import SelfAttention
+from .attention import SelfAttention
 
 
 class CLIPEmbedding(nn.Module):

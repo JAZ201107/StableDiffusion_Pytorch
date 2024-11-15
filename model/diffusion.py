@@ -10,7 +10,7 @@ class TimeEmbedding(nn.Module):
         super().__init__()
 
         self.linear_1 = nn.Linear(n_embed, 4 * n_embed)
-        self.linear_2 = nn.Linear(4 * n_embed, n_embed)
+        self.linear_2 = nn.Linear(4 * n_embed, 4 * n_embed)
 
     def forward(self, x):
         # x: (1, 320)

@@ -32,7 +32,7 @@ def generate(
     if idle_device:
         to_idle = lambda x: x.to(idle_device)
     else:
-        to_idle = lambda: x
+        to_idle = lambda x: x
 
     generator = torch.Generator(device=device)
     if seed is None:

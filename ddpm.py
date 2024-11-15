@@ -6,7 +6,7 @@ class DDPMSampler:
     def __init__(
         self,
         generator,
-        num_training_steps,
+        num_training_steps=1000,
         beta_start=0.00085,
         beta_end=0.0120,
     ):
@@ -29,7 +29,7 @@ class DDPMSampler:
             np.arange(0, num_training_steps)[::-1].copy()
         )  # From 999 to 0
 
-    def set_inference_timestep(self, num_inference_steps=50):
+    def set_inference_timesteps(self, num_inference_steps=50):
         self.num_inference_steps = num_inference_steps
         # Since we only step 50 times, we space the time steps that
         # one step = step_ratio *  time steps

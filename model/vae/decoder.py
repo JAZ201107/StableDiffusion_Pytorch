@@ -58,6 +58,6 @@ class VAE_Decoder(nn.Sequential):
         x /= 0.18215
 
         for m in self:
-            x = m
+            x = m(x)
 
         return x

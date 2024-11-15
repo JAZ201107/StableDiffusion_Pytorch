@@ -33,7 +33,7 @@ class VAE_Encoder(nn.Sequential):
         for module in self:
             if getattr(module, "stride", None) == (2, 2):
                 x = F.pad(x, (0, 1, 0, 1))
-        x = module(x)
+            x = module(x)
 
         mean, log_variance = torch.chunk(x, 2, dim=1)
 

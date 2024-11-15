@@ -12,8 +12,9 @@ class SelfAttention(nn.Module):
             d_embed % n_heads == 0
         ), "Embedding dimension must be divisible by the number of heads"
         self.d_head = d_embed // n_heads
+
         self.in_proj = nn.Linear(d_embed, 3 * d_embed, bias=in_proj_bias)
-        self.out_proj - nn.Linear(d_embed, d_embed, bias=out_proj_bias)
+        self.out_proj = nn.Linear(d_embed, d_embed, bias=out_proj_bias)
         self.n_heads = n_heads
 
     def forward(self, x, causal_mask=False):
